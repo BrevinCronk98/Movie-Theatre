@@ -20,8 +20,10 @@ Ticket.prototype.checkAge = function(age){
   var underage2msg = $(".kid2");
   var discountMsg = $(".senior");
   var age18upOnly = $(".age18upOnly");
+  var underageOutput = $(".underageOutput");
   if (age < 18) {
     age18upOnly.hide();
+    underageOutput.hide();
     regularMsg.hide();
     underage2msg.show();
     discountMsg.hide();
