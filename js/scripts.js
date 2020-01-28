@@ -1,33 +1,87 @@
+// Ticket Contructor ------------------
+function Ticket(movie){
+  this.movie = movie,
+  this.price = 20,
+  this.time = ""
+}
 
+Ticket.prototype.checkPrice = function() {
+  if(this.movie=="movie1"){
+    this.price += 10;      
+    } else if(this.movie=="movie2"){
+      this.price = this.price;
+    } else if(this.movie == "movie3"){
+      this.price -=10;
+    }
+  }
+  
+Ticket.prototype.checkAge = function(age){
+  var regularMsg = $(".regular");
+  var underage2msg = $(".kid2");
+  var discountMsg = $(".senior");
+  if (age < 18) {
+    regularMsg.hide();
+    underage2msg.show();
+    discountMsg.hide();
+  } else if (age >= 65) {
+    regularMsg.hide();
+    underage2msg.hide();
+    discountMsg.show();
+    this.price -= 5
+  } else {
+    regularMsg.show();
+    underage2msg.hide();
+    discountMsg.hide();
+  }
+}
+
+Ticket.prototype.addTime = function(inputTime){
+  this.time = inputTime;
+} 
+
+Ticket.prototype.showTicket = function(showOutputDiv) {
+  var showOutputMsg = showOutputDiv;
+  var ticketDetails = "";
+  ticketDetails += `<p> Congratulations on buying your ticket for</p>`;
+  ticketDetails += `<p>$${this.price}</p>`;
+  ticketDetails += `<p>${this.time}</p>`
+  showOutputMsg.html(ticketDetails);
+}
 
 // User Input Logic --------------------------------
 $(document).ready(function(){
-  $("#formAge").submit(function(event){
-    event.preventDefault();
-    var inputAge = parseInt($("input#age").val());
-    console.log(inputAge);
-  });
-
   $("button#btnMovie1").click(function(event){
     event.preventDefault();
-    console.log("1st movie submitted");
+    var inputAge = parseInt($("input#age").val());
+    var ticket1 = new Ticket("movie1")
+    ticket1.checkPrice();
     var inputTime = $("input:radio[name=movie1]:checked").val();
-    console.log(inputTime);
+    ticket1.checkAge(inputAge);
+    ticket1.addTime(inputTime);
+    ticket1.showTicket($("#show-output1"));
   });
 
   $("button#btnMovie2").click(function(event){
     event.preventDefault();
-    console.log("2nd movie submitted");
+    var inputAge = parseInt($("input#age").val());
+    var ticket2 = new Ticket("movie2")
+    ticket2.checkPrice();
+    ticket2.checkAge(inputAge);  
     var inputTime = $("input:radio[name=movie2]:checked").val();
-    console.log(inputTime);
+    ticket2.addTime(inputTime);
+    ticket2.showTicket($("#show-output2"));
   });
 
   $("button#btnMovie3").click(function(event){
     event.preventDefault();
-    console.log("3rd movie submitted");
+    var inputAge = parseInt($("input#age").val());
+    var ticket3 = new Ticket("movie3");
+    ticket3.checkPrice();
+    ticket3.checkAge(inputAge);   
     var inputTime = $("input:radio[name=movie3]:checked").val();
-    console.log(inputTime);
+    ticket3.addTime(inputTime);
+    ticket3.showTicket($("#show-output3"));
   });
 
 
-})
+});

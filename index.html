@@ -12,67 +12,75 @@
    <center><h1>Seattle Movie Theatre</h1>
       <p>Chose what Movie You would like to see</p></center>
   </div>
-
-  <form id="formAge">
-      <center><label for="age">Enter Your Age!!</label>
-        <input type="number" id="age" name="age">
-        <button type="submit" id="buttonAge"> Go!</button></center> 
-  </form>
-
-  <hr>
-
   <form id="formMovie">
     <div class="container">
       <div class="container-fluid">
         <div class="row">
+            <label for="age">Enter Your Age!!</label>
+              <input type="number" id="age" name="age">     
+        </div>
+        <hr>
+        <div class="row">
           <div class="col-md-4">
             <h2> Finding Syntax Errors</h2>
               <p>Amazing thriller about finding errors that drive the world crazy</p>
-              <input type="radio" id="time1" name="movie1" value="4:30"> 4:30 P.M. - 10:30 P.M
+              <input type="radio" id="Mov1Time1" name="movie1" value="4:30P.M."> 4:30 P.M. - 10:30 P.M
               <br>
-              <input type="radio" id="time2" name="movie1" value="6:00"> 6:00 A.M. - 12:00 P.M
+              <input type="radio" id="Mov1Time2" name="movie1" value="6:00A.M."> 6:00 A.M. - 12:00 P.M
               <br>
-              <input type="radio" id="time3" name="movie1" value="12:00"> 12:00 P.M. - 6:00 P.M
+              <input type="radio" id="Mov1Time3" name="movie1" value="12:00P.M."> 12:00 P.M. - 6:00 P.M
               <br>
               <br>
               <button type="submit" id="btnMovie1"> Buy a Ticket </button></center> 
-              <p class="total1"> Your Total is $20</p>
-              <p class="age1">You get a 5 dollar Discount for your old age!!!!!!!!</p>
-              <p class="kid1"> You get a discount for being a youngling</p>
+              <p class="regular"> Your Total is $20</p>
+              <p class="senior">You get a 5 dollar Discount for your old age!!!!!!!!</p>
           </div>
           <div class="col-md-4 age18upOnly">
             <h2> Battle of Robots</h2>
               <p>Watch this super rated R film about students vs AI</p>            
-                  <input type="radio" id="time1" name="movie2" value="4:00"> 4:00 P.M. - 7:00 P.M
+                  <input type="radio" id="Mov2Time1" name="movie2" value="4:00P.M."> 4:00 P.M. - 7:00 P.M
                   <br>
-                  <input type="radio" id="time2" name="movie2" value="6:30"> 6:30 A.M. - 9:30 A.M.
+                  <input type="radio" id="Mov2Time2" name="movie2" value="6:30A.M."> 6:30 A.M. - 9:30 A.M.
                   <br>
-                  <input type="radio" id="time3" name="movie2" value="1:30"> 1:30 P.M. - 3:30 P.M   
+                  <input type="radio" id="Mov2Time3" name="movie2" value="1:30P.M."> 1:30 P.M. - 3:30 P.M   
                   <br>
                   <br>
                   <button type="submit" id="btnMovie2"> Buy a Ticket </button></center> 
-                  <p class="total2"> Your Total is $20</p>
-                  <p class="age2">You get a 5 dollar Discount for your old age!!!!!!!!</p>
+                  <p class="regular"> Your Total is $20</p>
+                  <p class="senior">You get a 5 dollar Discount for your old age!!!!!!!!</p>
                   <p class="kid2"> You are not allowed to watch this </p>
           </div>
           <div class="col-md-4 age18upOnly">
-            <h2>Help Im Drowing in Code</h2>
-            <p>The never ending fear of drowing in your un-formatted code</p>         
-                <input type="radio" id="time1" name="movie3" value="5:30"> 5:30 P.M. - 7:30 P.M
+            <h2>Help I'm Drowning in Code</h2>
+            <p>The never ending fear of drowning in your un-formatted code</p>         
+                <input type="radio" id="Mov3Time1" name="movie3" value="5:30P.M."> 5:30 P.M. - 7:30 P.M
                 <br>
-                <input type="radio" id="time2" name="movie3" value="7:30"> 7:30 P.M. - 9:30 P.M.
+                <input type="radio" id="Mov3Time2" name="movie3" value="7:30P.M."> 7:30 P.M. - 9:30 P.M.
                 <br>
-                <input type="radio" id="time3" name="movie3" value="8:30"> 8:30 P.M. - 10:30 P.M
+                <input type="radio" id="Mov3Time3" name="movie3" value="8:30P.M."> 8:30 P.M. - 10:30 P.M
                 <br>
                 <br>
                 <button type="submit" id="btnMovie3"> Buy a Ticket </button></center> 
-                <p class="total2"> Your Total is $20</p>
-                <p class="age2">You get a 5 dollar Discount for your old age!!!!!!!!</p>
+                <p class="regular"> Your Total is $20</p>
+                <p class="senior">You get a 5 dollar Discount for your old age!!!!!!!!</p>
                 <p class="kid2"> You are not allowed to watch this </p>
           </div>
         </div>
       </div>
     </div>
   </form>  
+  <div class="container">
+    <div class="row">
+    <div class="col-md-4">
+      <div id="show-output1"></div>
+    </div>
+    <div class="col-md-4">
+        <div id="show-output2"></div>
+      </div>
+      <div class="col-md-4">
+          <div id="show-output3"></div>
+        </div>
+      </div>
+  </div>
 </body>
 </html>
