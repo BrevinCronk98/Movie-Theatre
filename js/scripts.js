@@ -19,16 +19,20 @@ Ticket.prototype.checkAge = function(age){
   var regularMsg = $(".regular");
   var underage2msg = $(".kid2");
   var discountMsg = $(".senior");
+  var age18upOnly = $(".age18upOnly");
   if (age < 18) {
+    age18upOnly.hide();
     regularMsg.hide();
     underage2msg.show();
     discountMsg.hide();
   } else if (age >= 65) {
+    age18upOnly.show();
     regularMsg.hide();
     underage2msg.hide();
     discountMsg.show();
     this.price -= 5
   } else {
+    age18upOnly.show();
     regularMsg.show();
     underage2msg.hide();
     discountMsg.hide();
